@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>Little Bunny</h1>
+    </header>
+    <main>
+       <nav> <h1>Power of nature</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `Once upon a time, in a peaceful meadow surrounded by colorful flowers and tall, swaying grass, there lived a little bunny named Cotton. Cotton was known for her soft white fur and her gentle nature.
+
+Every day, Cotton would hop around the meadow, exploring the wonders of nature. She would listen to the birds chirping, feel the warmth of the sun on her fur, and watch as butterflies danced in the air.
+
+One day, as Cotton was hopping along, she came across a babbling brook. The sound of the water flowing over the smooth stones immediately caught her attention. Cotton hopped closer and saw her reflection in the crystal-clear water.
+
+She sat by the brook, mesmerized by the peacefulness of the scene. The sound of the water and the gentle breeze rustling the leaves above created a soothing melody. Cotton closed her eyes and took a deep breath, allowing the tranquility to wash over her.
+
+As she sat there, a sense of calmness enveloped her. All her worries and frustrations melted away, replaced by a sense of peace and serenity. In that moment, Cotton realized the power of nature to heal and bring inner peace.
+
+From that day forward, whenever Cotton felt overwhelmed or frustrated, she would return to the babbling brook. She would sit by the water, listening to its soothing sounds, and find solace in the beauty of the natural world.
+
+And so, my friend, whenever you’re feeling frustrated, take a moment to imagine yourself sitting by a peaceful babbling brook, surrounded by nature’s beauty. Close your eyes, take a deep breath, and let the calming sounds and sights wash away your frustrations.
+
+I hope this story brought you some calmness. Remember, sometimes all we need is a little moment of tranquility to find our balance again. 🌿🐇`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
